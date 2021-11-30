@@ -1,0 +1,119 @@
+.sidenav {
+    z-index: 1031 !important;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 10%) 0px -4px 10px;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.sidenav.show {
+    right: 0px;
+}
+
+.sidenav.close {
+    right: -250px;
+}
+
+.sidenav .nav-block {
+    display: flex;
+}
+
+.sidenav a.closebtn {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+.sidenav ul {
+    list-style-type: none;
+    border-top: 1px solid rgba(55, 56, 115, 0.15);
+    padding-top: 10px;
+    padding: 0px 10px;
+    height: calc(100% - 142px);
+    overflow: auto;
+}
+
+.sidenav ul .cart-item {
+    border-top: 1px solid rgba(55, 56, 115, 0.15);
+    display: flex;
+    margin-top: 10px;
+}
+
+.sidenav ul .cart-item:nth-child(1) {
+    border: 0px;
+}
+
+.sidenav ul .cart-item img {
+    width: 88px;
+    height: 88px;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.sidenav ul .cart-item div {
+    width: 150px;
+}
+
+.sidenav ul .cart-item .title {
+    font-family: sans-serif;
+    margin-top: 8px;
+    margin-bottom: 3px;
+    font-size: 14px;
+    line-height: 19px;
+    color: rgb(55, 56, 115);
+}
+
+.sidenav ul .cart-item .category {
+    font-family: sans-serif;
+    margin-top: 0px;
+    margin-bottom: 3px;
+    font-size: 14px;
+    line-height: 19px;
+    color: black;
+}
+
+.sidenav ul .cart-item .price {
+    font-family: sans-serif;
+    margin-top: 8px;
+    margin-bottom: 3px;
+    font-size: 12px;
+    line-height: 24px;
+    color: rgb(55, 56, 115);
+    margin: 0px;
+}
+
+.sidenav .checkout-block {
+    box-shadow: rgb(0 0 0 / 10%) 0px -4px 10px;
+    position: absolute;
+    bottom: 0px;
+    padding: 20px 20px 20px 20px;
+    left: 0;
+    right: 0;
+}
+
+.sidenav .checkout-block a {
+    padding: 5px 55px;
+    font-size: 1.5rem;
+}
