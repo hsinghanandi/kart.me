@@ -6,20 +6,15 @@ This application uses a third-party API, called FakeStoreAPI, which is free and 
 
 Kart.me has been developed using MERN stack.
 
+
+
 ## Features of Kart.me
 
 1. Variety of products to choose from
 2. Filter products based on preferences
 3. A simple, intuitive & user-guided UI
-4. Effortless shopping experience
 
-# Getting Started
 
-The final project has been divided into two parts, one serves the Client functionality and the other handles the Server functionality
-
-`kart.me-FE` is the Client-side of the application, and `kart.me-BE` is the Server-side.
-
-The installation instructions for both could be found in their respective `readme` file.
 
 # How To Use Kart.me
 
@@ -33,76 +28,40 @@ NOTE: To remove a product while at checkout, user need to navigate to homepage t
 
 
 
+# Getting Started
+
+The final project has been divided into two parts, one serves the Client functionality and the other handles the Server functionality and the deployment has also been done the same way.
+
+`kart.me-FE` is the Client-side of the application, and `kart.me-BE` is the Server-side. 
+
+To function, the project requires the use of environmental variables. So, in order to run the project, you need to make a .env file at the root directory of the Client and the Server application and the respective name for those variable can be found below:
+
+### kart.me-BE Environmental Variables
+
+ `DB_CONNECTION`  
+This variable will contain the connection string to MongoDB. For this, first you need to create an account on MongoDB Atlas and paste your connection     string here.
+
+### kart.me-FE Environmental Variables
+
+`REACT_APP_KART_ME_SERVER`
+This variable will contain the address of the Server. For now, just enter (http://localhost:8080), as this has been setup as the fallback port for the server application. This variable will connect our client-side application to the server-side app and the database.
+
+#### NOTE: For the environmental variables to work properly in React, you need to create a .env file first and add all your varibles first, and then start your application using `npm start` command. If you started your application and later added the variable to .env file, then you need to stop the application and restart in order for environmental variables to work. 
+Reference: https://medium.com/@thejasonfile/using-dotenv-package-to-create-environment-variables-33da4ac4ea8f
 
 
 
-# Getting Started with Create React App
+# How to Run the Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+After you are done with the setup as explained below, move to the root of both the client and server application in separate terminals and run the following commands to start the project:
 
-## Available Scripts
+1. `npm install`
+2. `npm start`
 
-In the project directory, you can run:
+Thats all what is required. Good Luck!
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# API Documentation for Kart.me
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The API documentation can be found at :
