@@ -63,10 +63,14 @@ export default function UserForm({ cart, saveUserDetail, placeOrder }) {
             !phone.trim().length ||
             !city.trim().length ||
             !country.trim().length
-        )
+        ) {
             throw new Error(
                 'Please fill in all the required fields to Check Out!'
             );
+        }
+        if (phone.trim().length !== 10 || isNaN(Number(phone))) {
+            throw new Error('Please enter valid phone number');
+        }
     };
     const handleSubmit = (e) => {
         try {
@@ -176,7 +180,7 @@ export default function UserForm({ cart, saveUserDetail, placeOrder }) {
                     Contact Number
                 </label>
                 <input
-                    type='tel'
+                    type='text'
                     className='form-control'
                     value={phone}
                     onChange={(e) => setphone(e.target.value)}

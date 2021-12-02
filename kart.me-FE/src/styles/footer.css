@@ -1,0 +1,13 @@
+.footer-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.footer-container h6 {
+    margin: 0;
+}
+
+.footer-container p {
+    font-size: smaller;
+    margin: 0;
+}

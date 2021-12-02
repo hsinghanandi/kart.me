@@ -1,18 +1,18 @@
 const Cart = require('../models/cartModel');
 
-const getAllCartProducts = (req, res) => {
+const getAllUserOrders = (req, res) => {
     Cart.find({})
         .exec()
         .then((results) => {
             results.length
                 ? res.status(200).json({
                       status: 'Success',
-                      message: 'Sending all CART products!',
+                      message: 'Sending all user Orders!',
                       data: results,
                   })
                 : res.status(200).json({
                       status: 'Success',
-                      message: 'Uh Oh, User Cart is currently Empty!',
+                      message: 'Uh Oh, no orders found!',
                   });
         })
         .catch((error) => res.status(500).send(error));
@@ -24,28 +24,13 @@ const getCartProduct = (req, res) => {
         .then((result) => {
             res.status(200).json({
                 status: 'Success',
-                message: 'Sending CART product!',
+                message: 'Sending User Order!',
                 data: result,
             });
         })
         .catch((error) =>
-            res.status(500).json({ error: 'No such Product exists!' })
+            res.status(500).json({ error: 'No such Order exists!' })
         );
-};
-
-const createCartProduct = (req, res) => {
-    const newProduct = new Cart(req.body);
-    newProduct
-        .save()
-        .then((result) => {
-            res.status(201).json({
-                status: 'Success',
-                message: 'Product successfully saved to Cart',
-                data: newProduct,
-                url: `/api/v1/user/cart/${newProduct._id}`,
-            });
-        })
-        .catch((error) => res.status(500).send(error));
 };
 
 const addToCart = async (req, res) => {
@@ -83,7 +68,7 @@ const addToCart = async (req, res) => {
         }
         res.status(201).json({
             status: 'Success',
-            message: 'Product successfully saved to Cart',
+            message: 'Product(s) successfully added to Cart',
             data: cart,
             url: `/api/v1/user/cart/${cart._id}`,
         });
@@ -122,7 +107,7 @@ const removeFromCart = async (req, res) => {
         }
         res.status(201).json({
             status: 'Success',
-            message: 'Product successfully saved to Cart',
+            message: 'Product(s) removed from to Cart',
             data: cart,
             url: `/api/v1/user/cart/${cart._id}`,
         });
@@ -138,9 +123,10 @@ const removeFromCart = async (req, res) => {
 
 const updateUser = async (req, res) => {
     try {
-        const payload = req.body;
+        const payload = req.sanitizedValue;
         const cartId = payload.cartId;
         delete payload.cartId;
+
         let cart = await Cart.findOne({
             _id: cartId,
         }).exec();
@@ -197,7 +183,7 @@ const createOrder = async (req, res) => {
         }
         res.status(201).json({
             status: 'Success',
-            message: 'Product successfully saved to Cart',
+            message: 'Order successfully placed!',
             data: cart,
             url: `/api/v1/user/cart/${cart._id}`,
         });
@@ -212,8 +198,7 @@ const createOrder = async (req, res) => {
 };
 
 module.exports = {
-    getAllCartProducts,
-    createCartProduct,
+    getAllUserOrders,
     getCartProduct,
     addToCart,
     removeFromCart,

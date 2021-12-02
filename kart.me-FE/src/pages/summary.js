@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { getCart } from '../api';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 export default function Summary() {
     const [cart, setcart] = useState({});
@@ -44,7 +45,7 @@ export default function Summary() {
                             <strong className='text-capitalize'>
                                 {cart.name}
                             </strong>
-                            , congratulations your order has been placed.
+                            , Congratulations your order has been placed!
                         </p>
                     </div>
 
@@ -74,7 +75,7 @@ export default function Summary() {
                         <div className='card'>
                             <div className='card-body border-0 d-flex flex-column align-items-conter justify-content-center'>
                                 <h5 className='card-title text-center'>
-                                    Thank you for shopping{' '}
+                                    Thank you for shopping with us!{' '}
                                 </h5>
                                 <p className='card-text text-center'>
                                     Looking for something else, click on Shop to
@@ -88,6 +89,7 @@ export default function Summary() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     );
 }

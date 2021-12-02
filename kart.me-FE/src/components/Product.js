@@ -16,9 +16,9 @@ export default function Product({ product, handleAddToWishlist, removeItem }) {
                         <h6 className='card-title'>
                             Category: {product.category}
                         </h6>
-                        <p className='card-text'>Price: {product.price}</p>
+                        <p className='card-text'>Price: ${product.price}</p>
                         <p className='card-text'>
-                            Rating: {product.rating.rate}
+                            Rating: {product.rating.rate}/5
                         </p>
                         {product.isSelected ? (
                             <a

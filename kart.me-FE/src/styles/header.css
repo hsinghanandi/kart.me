@@ -1,7 +1,19 @@
 .cart-badge {
     position: absolute;
     bottom: 0;
-    top: 16px;
+    top: 12px;
     right: 0;
     left: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .cart-badge {
+        top: 14px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .cart-badge {
+        top: 16px;
+    }
 }

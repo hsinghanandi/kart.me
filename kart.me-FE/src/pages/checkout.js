@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../style.css';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import UserForm from '../components/UserForm';
 import { createOrder, getCart, saveUserDetailToCart } from '../api';
 import { toast } from 'react-toastify';
@@ -43,7 +44,10 @@ const Checkout = () => {
             });
             getUserCart();
         } catch (error) {
-            toast.error(error.message);
+            let message = error?.response?.data?.message?.length
+                ? error.response.data.message[0].message
+                : error.message;
+            toast.error(message);
         }
     };
 
@@ -75,6 +79,7 @@ const Checkout = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     );
 };

@@ -1,19 +1,20 @@
 const router = require('express').Router({ mergeParams: true });
+const userFormDataValidator = require('../middlewares/userFromDataValidator');
 
 const {
-    getAllCartProducts,
+    getAllUserOrders,
     createCartProduct,
     getCartProduct,
     addToCart,
     removeFromCart,
     updateUser,
-    createOrder
+    createOrder,
 } = require('../controllers/cartControllers');
 
-router.route('/').get(getAllCartProducts).post(createCartProduct);
+router.route('/').get(getAllUserOrders);
 router.route('/add-to-cart').post(addToCart);
 router.route('/remove-product').patch(removeFromCart);
-router.route('/update-user').patch(updateUser);
+router.patch('/update-user', userFormDataValidator, updateUser);
 router.route('/create-order').patch(createOrder);
 router.route('/:id').get(getCartProduct);
 

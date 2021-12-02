@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import Products from '../components/Products';
 import { addtoCart, getCart, getCategories, removeItemfromCart } from '../api';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const Home = () => {
     const [cart, setcart] = useState({});
@@ -67,7 +68,15 @@ const Home = () => {
                 }
             }
         } catch (error) {
-            toast.error('Failed to fetch the cart items', TOAST);
+            toast.info('Connecting to DB, please wait', {
+                position: 'top-right',
+                autoClose: 7000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
         }
     };
 
@@ -103,6 +112,7 @@ const Home = () => {
                     removeItem={removeItem}
                 />
             </div>
+            <Footer />
         </>
     );
 };
