@@ -4,7 +4,7 @@ import axios from 'axios';
 import Loader from 'react-loader-spinner';
 
 const Products = ({
-    handleAddToWishlist,
+    handleAddToCart,
     handleChangeCategory,
     selectedOption,
     selectedCategory,
@@ -92,7 +92,7 @@ const Products = ({
                             <Fragment key={i}>
                                 <Product
                                     product={product}
-                                    handleAddToWishlist={handleAddToWishlist}
+                                    handleAddToCart={handleAddToCart}
                                     removeItem={removeItem}
                                 />
                             </Fragment>

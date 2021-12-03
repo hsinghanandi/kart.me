@@ -107,7 +107,7 @@ const removeFromCart = async (req, res) => {
         }
         res.status(201).json({
             status: 'Success',
-            message: 'Product(s) removed from to Cart',
+            message: 'Product(s) removed from Cart',
             data: cart,
             url: `/api/v1/user/cart/${cart._id}`,
         });
@@ -146,7 +146,7 @@ const updateUser = async (req, res) => {
         }
         res.status(201).json({
             status: 'Success',
-            message: 'Product successfully saved to Cart',
+            message: 'User details added to the Order',
             data: cart,
             url: `/api/v1/user/cart/${cart._id}`,
         });

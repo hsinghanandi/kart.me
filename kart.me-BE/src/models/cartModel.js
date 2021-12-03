@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
-const { String, ObjectId, Number } = Schema.Types;
+const { String, Number } = Schema.Types;
 
 const cartSchema = new Schema(
     {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Product({ product, handleAddToWishlist, removeItem }) {
+export default function Product({ product, handleAddToCart, removeItem }) {
     return (
         <>
             <li key={product.id} className='listing'>
@@ -30,9 +30,7 @@ export default function Product({ product, handleAddToWishlist, removeItem }) {
                         ) : (
                             <a
                                 className='btn btn-primary'
-                                onClick={(event) =>
-                                    handleAddToWishlist(product)
-                                }
+                                onClick={(event) => handleAddToCart(product)}
                             >
                                 Add to Cart
                             </a>

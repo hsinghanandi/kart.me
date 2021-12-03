@@ -17,7 +17,7 @@ const Home = () => {
         progress: undefined,
     };
 
-    const handleAddToWishlist = async (product) => {
+    const handleAddToCart = async (product) => {
         try {
             const res = await addtoCart({
                 image: product.image,
@@ -103,7 +103,7 @@ const Home = () => {
             <Header cart={cart} showSideCart={true} />
             <div className='container main-container'>
                 <Products
-                    handleAddToWishlist={handleAddToWishlist}
+                    handleAddToCart={handleAddToCart}
                     handleChangeCategory={handleChangeCategory}
                     selectedOption={selectedOption}
                     selectedCategory={selectedCategory}
